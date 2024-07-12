@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .text-gradient {
+        @apply bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-400 inline-block text-transparent bg-clip-text;
+    }
+
+    .bg-gradient-lp {
+        @apply bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-400;
+    }
+}
