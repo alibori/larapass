@@ -24,7 +24,7 @@ test('profile information can be updated', function () {
 
     $component = Volt::test('profile.update-profile-information-form')
         ->set('name', 'Test User')
-        ->set('email', 'test@example.com')
+        ->set('email', 'test@untested.com')
         ->call('updateProfileInformation');
 
     $component
@@ -34,7 +34,7 @@ test('profile information can be updated', function () {
     $user->refresh();
 
     $this->assertSame('Test User', $user->name);
-    $this->assertSame('test@example.com', $user->email);
+    $this->assertSame('test@untested.com', $user->email);
     $this->assertNull($user->email_verified_at);
 });
 
