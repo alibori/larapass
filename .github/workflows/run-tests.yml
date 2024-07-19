@@ -50,5 +50,13 @@ jobs:
       - name: List Installed Dependencies
         run: composer show -D
 
+      - name: Create DB
+        run: |
+          touch database/database.sqlite
+
       - name: Execute tests
         run: vendor/bin/pest
+
+      - name: Delete DB
+        run: |
+          rm database/database.sqlite
