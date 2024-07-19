@@ -6,7 +6,7 @@ namespace App\Encryption;
 
 use Exception;
 
-final class PasswordEncrypter implements \App\Contracts\PasswordEncrypter
+class PasswordEncrypter implements \App\Contracts\PasswordEncrypter
 {
     public string $key;
     public string $nonce;

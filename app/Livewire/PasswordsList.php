@@ -13,7 +13,6 @@ use Illuminate\Foundation\Application;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Native\Laravel\Facades\Clipboard;
-use function Laravel\Prompts\alert;
 
 final class PasswordsList extends Component
 {
@@ -23,8 +22,7 @@ final class PasswordsList extends Component
     public function boot(
         PasswordEncrypter $password_encrypter,
         PasswordService $password_service
-    ): void
-    {
+    ): void {
         $this->password_encrypter = $password_encrypter;
         $this->password_service = $password_service;
     }

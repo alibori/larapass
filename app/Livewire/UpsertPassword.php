@@ -43,8 +43,7 @@ final class UpsertPassword extends Component
     public function boot(
         PasswordService $password_service,
         PasswordEncrypter $password_encrypter
-    ): void
-    {
+    ): void {
         $this->password_service = $password_service;
         $this->password_encrypter = $password_encrypter;
     }

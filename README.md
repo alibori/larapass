@@ -2,11 +2,13 @@
 
 LaraPass is a self-hosted personal password manager built with security in mind. It is a fullstack web application built with Laravel, Livewire, Tailwind CSS and NativePHP.
 
+LaraPass is built with security in mind. It uses the latest security best practices to keep your passwords safe. These are encrypted using the **OpenSSL** encryption algorithm.
+
 **IMPORTANT**: This project is still in development and is not ready for production use.
 
 ## Features
 
-- **Secure**: LaraPass is built with security in mind. It uses the latest security best practices to keep your passwords safe. These are encrypted using the **OpenSSL** encryption algorithm.
+- **Save your passwords**: Save your passwords in a secure way.
 
 ## Configuration
 

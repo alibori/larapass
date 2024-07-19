@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Providers;
 
 use Native\Laravel\Facades\Window;
@@ -16,13 +18,15 @@ class NativeAppServiceProvider implements ProvidesPhpIni
     {
         Menu::new()
             ->appMenu()
-            ->submenu('Author', Menu::new()
-                ->link('https://github.com/alibori', 'GitHub profile')
+            ->submenu(
+                'Author',
+                Menu::new()
+                    ->link('https://github.com/alibori', 'GitHub profile')
             )
             ->register();
 
         Window::open()
-            ->route('dashboard')
+            ->route('passwords.index')
             ->width(1200)
             ->height(800);
     }

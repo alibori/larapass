@@ -15,8 +15,7 @@ final readonly class PasswordService
     public function __construct(
         private PasswordEncrypter $password_encrypter,
         private PasswordRepositoryContract $password_repository
-    )
-    {
+    ) {
     }
 
     /**

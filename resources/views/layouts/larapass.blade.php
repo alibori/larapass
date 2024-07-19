@@ -39,16 +39,6 @@
             <nav class="hs-accordion-group p-6 w-full flex flex-col flex-wrap" data-hs-accordion-always-open>
                 <ul class="space-y-1.5">
                     <li>
-                        <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-md text-white rounded-lg hover:bg-gradient-lp" href="{{route('dashboard')}}" wire:navigate>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-                            </svg>
-
-                            {{__('Dashboard')}}
-                        </a>
-                    </li>
-
-                    <li>
                         <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-md text-white rounded-lg hover:bg-gradient-lp" href="{{ route('passwords.index') }}" wire:navigate>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
@@ -60,10 +50,14 @@
                 </ul>
             </nav>
 
-            <a class="absolute bottom-3 flex justify-center ml-8 gap-x-2 text-white" href="https://github.com/alibori/larapass" onclick="require('electron').shell.openExternal(this.href); return false;">
+            <a class="absolute bottom-12 flex justify-center ml-8 gap-x-2 text-white" href="https://github.com/alibori/larapass" onclick="require('electron').shell.openExternal(this.href); return false;">
                 <svg viewBox="0 0 24 24" aria-hidden="true" class="size-6 fill-white"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.463 2 11.97c0 4.404 2.865 8.14 6.839 9.458.5.092.682-.216.682-.48 0-.236-.008-.864-.013-1.695-2.782.602-3.369-1.337-3.369-1.337-.454-1.151-1.11-1.458-1.11-1.458-.908-.618.069-.606.069-.606 1.003.07 1.531 1.027 1.531 1.027.892 1.524 2.341 1.084 2.91.828.092-.643.35-1.083.636-1.332-2.22-.251-4.555-1.107-4.555-4.927 0-1.088.39-1.979 1.029-2.675-.103-.252-.446-1.266.098-2.638 0 0 .84-.268 2.75 1.022A9.607 9.607 0 0 1 12 6.82c.85.004 1.705.114 2.504.336 1.909-1.29 2.747-1.022 2.747-1.022.546 1.372.202 2.386.1 2.638.64.696 1.028 1.587 1.028 2.675 0 3.83-2.339 4.673-4.566 4.92.359.307.678.915.678 1.846 0 1.332-.012 2.407-.012 2.734 0 .267.18.577.688.48 3.97-1.32 6.833-5.054 6.833-9.458C22 6.463 17.522 2 12 2Z"></path></svg>
                 {{__('GitHub')}}
             </a>
+
+            <p class="absolute bottom-3 left-3/4 w-full flex text-white text-sm">
+                {{__('ver.')}} {{ config('nativephp.version') }}
+            </p>
         </div>
         <!-- End Sidebar -->
 

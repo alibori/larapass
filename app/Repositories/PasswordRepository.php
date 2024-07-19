@@ -12,7 +12,7 @@ final class PasswordRepository implements PasswordRepositoryContract
 {
     public function upsert(array $attributes): Password
     {
-        $attributes_filtered = array_filter($attributes, fn($key) => in_array($key, ['title', 'origin', 'username', 'password', 'comments', 'user_id', 'group_id']), ARRAY_FILTER_USE_KEY);
+        $attributes_filtered = array_filter($attributes, fn ($key) => in_array($key, ['title', 'origin', 'username', 'password', 'comments', 'user_id', 'group_id']), ARRAY_FILTER_USE_KEY);
 
         return Password::query()->updateOrCreate(
             ['id' => $attributes['id'] ?? null],
@@ -24,13 +24,13 @@ final class PasswordRepository implements PasswordRepositoryContract
     {
         $query = Password::query();
 
-        if (!empty($filters)) {
+        if ( ! empty($filters)) {
             foreach ($filters as $key => $value) {
                 $query->where($key, $value);
             }
         }
 
-        if (!empty($with)) {
+        if ( ! empty($with)) {
             $query->with($with);
         }
 

@@ -1,14 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
+use App\Livewire\Dashboard;
 use App\Livewire\PasswordsList;
 use App\Livewire\UpsertPassword;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::view('/', 'dashboard')
+Route::middleware(['auth', 'verified'])->group(function (): void {
+    Route::get('/', Dashboard::class)
         ->name('dashboard');
 
-    Route::prefix('passwords')->name('passwords.')->group(function () {
+    Route::prefix('passwords')->name('passwords.')->group(function (): void {
         Route::get('/', PasswordsList::class)
             ->name('index');
 

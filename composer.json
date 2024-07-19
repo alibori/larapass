@@ -15,7 +15,9 @@
         "ext-openssl": "*"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^3.1",
         "fakerphp/faker": "^1.23",
+        "larastan/larastan": "^2.9",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
         "mockery/mockery": "^1.6",
@@ -41,7 +43,10 @@
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "@php artisan ide-helper:generate",
+            "@php artisan ide-helper:meta"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
@@ -50,6 +55,17 @@
             "@php artisan key:generate --ansi",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --graceful --ansi"
+        ],
+        "test": [
+            "Composer\\Config::disableProcessTimeout",
+            "@php artisan optimize:clear",
+            "@php artisan test --stop-on-failure"
+        ],
+        "analyse": [
+            "./vendor/bin/phpstan analyse --memory-limit=2G"
+        ],
+        "format": [
+            "./vendor/bin/pint"
         ]
     },
     "extra": {
